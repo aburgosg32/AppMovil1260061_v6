@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil1260061.Views.vLogin"
+             BackgroundColor="#001F41" 
+             NavigationPage.HasNavigationBar="False" >
+    <StackLayout>
+        <Image Source="https://www.zarla.com/images/zarla-logro-comercial-1x1-2400x2400-20220202-www4ychwq9jwvrchmkf4.png"
+               HeightRequest="250" Margin="0,50,0,0"></Image>
+
+        <Frame CornerRadius="30" HeightRequest="480" Margin="0,20,0,0">
+            <StackLayout>
+                <Label Text="Acceso al Sistema" TextColor="#001C38" FontSize="35"
+                       FontAttributes="Bold" VerticalOptions="Center" Margin="40,20,0,30"></Label>
+                <Grid ColumnDefinitions="130,*" RowDefinitions="*,*">
+                    <Label Grid.Column="0" Grid.Row="0" Text="Correo : "
+                           FontSize="20" VerticalOptions="CenterAndExpand" TextColor="#001C38"
+                           Margin="0,0,0,20"></Label>
+                    <Entry Grid.Column="1" Grid.Row="0" Placeholder="Ingrese correo" TextColor="Black"
+                           VerticalOptions="CenterAndExpand" Margin="0,0,0,20" Text="{Binding TxtEmail}" PlaceholderColor="Black"></Entry>
+                    <Label Grid.Column="0" Grid.Row="1" Text="Password:"
+                            FontSize="20" VerticalOptions="CenterAndExpand" TextColor="#001C38"></Label>
+                    <Entry Grid.Column="1" Grid.Row="1" Placeholder="Ingrese password" TextColor="Black"
+                            VerticalOptions="CenterAndExpand" IsPassword="True" Text="{Binding TxtPassword}" PlaceholderColor="Black"></Entry>
+                </Grid>
+                <Label Text="Olvidaste la contraseña" HorizontalOptions="End" TextColor="#861B2D">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*" Margin="0,30,0,0">
+                    <Button Grid.Column="0" Grid.Row="0" Text="Ingresar" BackgroundColor="#001C38"
+                            CornerRadius="15" TextColor="White" FontSize="18" FontAttributes="Bold"
+                            Command="{Binding LoginComando}"></Button>
+                    <Button Grid.Column="1" Grid.Row="0" Text="Salir" BackgroundColor="#1C76D2"
+                            CornerRadius="15" TextColor="White" FontSize="18" FontAttributes="Bold"></Button>
+                </Grid>
+                <Label Text="No tienes cuenta. Registrate aqui." HorizontalOptions="End"
+                       TextColor="#1C76D2">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    </Label.GestureRecognizers>
+                    
+                </Label>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentPage>

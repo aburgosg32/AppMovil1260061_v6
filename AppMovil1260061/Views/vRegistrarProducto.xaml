@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil1260061.Views.vRegistrarProducto"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#001C42">
+
+    <StackLayout>
+        <Frame CornerRadius="5" BackgroundColor="#001F41">
+            <Grid ColumnDefinitions="100,*" RowDefinitions="70">
+                <Image Source="https://www.zarla.com/images/zarla-logro-comercial-1x1-2400x2400-20220202-www4ychwq9jwvrchmkf4.png"
+                   HeightRequest="70" Grid.Column="0" Grid.Row="0"></Image>
+                <Label Text="GESTION DE PRODUCTOS" Grid.Column="1"
+                   TextColor="White" FontSize="20"
+                   FontAttributes="Bold" VerticalOptions="Center"></Label>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="25,0,25,0" CornerRadius="10">
+            <StackLayout>
+                <Label Text="Nombre Producto" TextColor="#000000"
+                   FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.freepik.com/256/16294/16294637.png"></Image>
+                    <Entry Placeholder="Ingrese nombre producto" Grid.Column="1" 
+                       Text="{Binding Txtnombre}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Precio" TextColor="#000000"
+                    FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/256/1787/1787203.png"></Image>
+                    <Entry Placeholder="Ingrese Precio" Grid.Column="1"
+                       Text="{Binding Txtprecio}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Fecha de Vencimiento" TextColor="#000000"
+                    FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/256/10861/10861808.png"></Image>
+                    <Entry Placeholder="Ingrese Fecha vencimiento" Grid.Column="1"
+                       Text="{Binding Txtfechavencimiento}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Stock" TextColor="#000000"
+                    FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/256/4379/4379686.png"></Image>
+                    <Entry Placeholder="Ingrese stock" Grid.Column="1"
+                       Text="{Binding Txtstock}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Categoria" TextColor="#000000"
+                    FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/256/6724/6724239.png"></Image>
+                    <Entry Placeholder="Ingrese Categoria" Grid.Column="1"
+                       Text="{Binding Txtcategoria}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+
+                <Label Text="Proveedor" TextColor="#000000"
+                    FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.freepik.com/256/9557/9557578.png"></Image>
+                    <Entry Placeholder="Ingrese proveedor" 
+                        Grid.Column="1"
+                       Text="{Binding Txtproveedor}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+
+                <Label Text="Icono" TextColor="#000000"
+                     FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/256/8359/8359929.png"></Image>
+                    <Entry Placeholder="Ingrese icono"  Grid.Column="1" Text="{Binding Txticono}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+
+
+            </StackLayout>
+        </Frame>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*" Margin="10">
+            <Button HeightRequest="50" Text="REGISTRAR" TextColor="White"
+                Grid.Column="0" Grid.Row="0" BackgroundColor="#000000"
+                CornerRadius="10" FontSize="20" Command="{Binding cmdInsertarProducto}"></Button>
+            <Button Text="SALIR" Grid.Column="1" Grid.Row="0" BackgroundColor="White"
+                FontAttributes="Bold" CornerRadius="10" FontSize="20" Clicked="Button_Clicked" TextColor="Black" ></Button>
+        </Grid>
+    </StackLayout>
+
+
+
+</ContentPage>

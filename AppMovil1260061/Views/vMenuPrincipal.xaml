@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil1260061.Views.vMenuPrincipal"
+            NavigationPage.HasNavigationBar="False">
+  <!--Pages can be added as references or inline-->
+    <ContentPage IconImageSource="https://cdn-icons-png.flaticon.com/512/6063/6063734.png" Title="Perfil" Background="#001C42" >
+        <StackLayout>
+            <Frame CornerRadius="300" BorderColor="White" Margin="60,40,60,0" BackgroundColor="White">
+                <Image Source="{Binding LblImage}" 
+            Aspect="AspectFill" ></Image>
+            </Frame>
+            <Label Text="{Binding LblNombreCompleto}" HorizontalOptions="Center" FontSize="25" Margin="0,10,0,10" 
+                   FontAttributes="Bold" TextColor="White" FontFamily="Segoe UI"></Label>
+            <Frame CornerRadius="15" Margin="25">
+                <StackLayout>
+                    <Grid ColumnDefinitions="60,*" RowDefinitions="50,50,50,50">
+                        <Image Source="https://images.vexels.com/media/users/3/157341/isolated/lists/7fe3ac0e3e17582af32282dc82303a2b-icono-de-casa-plana-bungalow-negro.png"
+                               Grid.Column="0" Grid.Row="0" HeightRequest="40" Margin="0,0,0,20"></Image>
+                        <Label Text="{Binding LblNombreCompleto}" Grid.Column="1" Grid.Row="0"
+                               VerticalOptions="Center" FontSize="20" Margin="0,0,0,15" TextColor="Black"></Label>
+                        <Image Source="https://images.vexels.com/media/users/3/130187/isolated/lists/5e8d2205ecc8cde3235581fc5ecfa430-email-outline-icon.png"
+                                Grid.Column="0" Grid.Row="1" HeightRequest="40" Margin="0,0,0,20"></Image>
+                        <Label Text="{Binding LblEmail}" Grid.Column="1" Grid.Row="1"
+                            VerticalOptions="Center" FontSize="20" Margin="0,0,0,15" TextColor="Black"></Label>
+                        <Image Source="https://static-00.iconduck.com/assets.00/phone-icon-256x256-rgr9jl4p.png"
+                             Grid.Column="0" Grid.Row="2" HeightRequest="40" Margin="0,0,0,20"></Image>
+                        <Label Text="{Binding LblTelefono}" Grid.Column="1" Grid.Row="2"
+                            VerticalOptions="Center" FontSize="20" Margin="0,0,0,15" TextColor="Black"></Label>
+                        <Image Source="https://static-00.iconduck.com/assets.00/user-square-icon-256x256-w0pqfldx.png"
+                            Grid.Column="0" Grid.Row="3" HeightRequest="40" Margin="0,0,0,20"></Image>
+                        <Label Text="{Binding LblUserName}" Grid.Column="1" Grid.Row="3"
+                            VerticalOptions="Center" FontSize="20" Margin="0,0,0,15" TextColor="Black"></Label>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <Button Text="Cerrar Sesion" BackgroundColor="#AF0D0A" FontSize="20" FontAttributes="Bold"
+                    Margin="50,10,50,0" TextColor="White" CornerRadius="12" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage>
+
+
+    <ContentPage Title="Clientes"  IconImageSource="https://cdn.iconscout.com/icon/free/png-256/free-cliente-haciendo-compras-1106800.png" BackgroundColor="#001C42">
+        <StackLayout Orientation="Vertical">
+
+            <Frame BackgroundColor="#001C42" CornerRadius="15" Margin="15" BorderColor="White">
+                <Grid ColumnDefinitions="280,*" RowDefinitions="*">
+                    <Entry Placeholder="Buscar Cliente" Grid.Column="0" Grid.Row="0" PlaceholderColor="White"
+                   Text="{Binding TxtBuscarCliente, Mode=TwoWay}" TextColor="White"></Entry>
+                    <ImageButton Source="https://cdn.iconscout.com/icon/free/png-256/free-busqueda-1442-529926.png" HeightRequest="20"
+                         Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent" Command="{Binding cmdBuscarCliente}"/>
+                </Grid>
+            </Frame>
+            <Frame Margin="15" HeightRequest="500" BackgroundColor="White" CornerRadius="10">
+                <CollectionView ItemsSource="{Binding ListaClientes}" >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10" BackgroundColor="#001C42" Margin="0,0,0,10">
+                                <StackLayout Margin="0,0,0,10">
+                                    <Grid ColumnDefinitions="100,*" RowDefinitions="70">
+                                        <Image  Aspect="AspectFill" Grid.Column="0"
+                                        Source="{Binding fotocasa}" HeightRequest="150"></Image>
+                                        <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                            <Label  FontSize="16" TextColor="White" FontAttributes="Bold"
+                                            Text="{Binding apellidosnombre}"></Label>
+                                            <Label  FontSize="12" TextColor="White" Text="{Binding telefono}"></Label>
+                                            <Label  FontSize="12" TextColor="White" Text="{Binding ciudad}"></Label>
+                                            <Label  FontSize="12" TextColor="White" Text="{Binding direccion}"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <Button ImageSource="https://images.icon-icons.com/93/PNG/256/new_add_user_16734.png" 
+            HeightRequest="10" HorizontalOptions="End" Clicked="Button_Clicked_2"></Button>
+
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Productos" IconImageSource="https://cdn-icons-png.flaticon.com/256/1170/1170628.png" BackgroundColor="#001C42">
+
+        <StackLayout Orientation="Vertical">
+
+            <Frame BackgroundColor="#001C42" CornerRadius="15" Margin="15" BorderColor="White">
+                <Grid ColumnDefinitions="280,*" RowDefinitions="*">
+                    <Entry Placeholder="Buscar Producto" Grid.Column="0" Grid.Row="0" PlaceholderColor="White"
+                           Text="{Binding TxtBuscarProducto, Mode=TwoWay}" TextColor="White"></Entry>
+                    <ImageButton Source="https://cdn.iconscout.com/icon/free/png-256/free-busqueda-1442-529926.png" HeightRequest="20"
+                                 Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent" Command="{Binding cmdBuscarProducto}"/>
+                </Grid>
+            </Frame>
+            <Frame Margin="15" HeightRequest="500" BackgroundColor="White" CornerRadius="10">
+                <CollectionView ItemsSource="{Binding ListaProductos}" >
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10" BackgroundColor="#001C42" Margin="0,0,0,10">
+                                <StackLayout Margin="0,0,0,10">
+                                    <Grid ColumnDefinitions="100,*" RowDefinitions="50">
+                                        <Image  Aspect="AspectFill" Grid.Column="0"
+                                                Source="{Binding icono}"></Image>
+                                        <StackLayout Grid.Column="1">
+                                            <Label  FontSize="14" TextColor="White" FontAttributes="Bold"
+                                                    Text="{Binding nombre}"></Label>
+                                            <Label  FontSize="12" TextColor="White" Text="{Binding precio}"></Label>
+                                            <Label  FontSize="12" TextColor="White" Text="{Binding stock}"></Label>
+                                        </StackLayout>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+            <Button ImageSource="https://cdn-icons-png.flaticon.com/256/10608/10608872.png" 
+                    HeightRequest="10" HorizontalOptions="End" Clicked="Button_Clicked_1"></Button>
+            
+        </StackLayout>
+        
+    </ContentPage>
+
+    <ContentPage Title="Ventas" IconImageSource="https://cdn-icons-png.flaticon.com/256/5538/5538706.png" >
+        
+    </ContentPage>
+    <ContentPage IconImageSource="https://cdn.iconscout.com/icon/free/png-256/free-deposito-2121754-1786334.png" Title="Pagos" >
+    </ContentPage>
+
+</TabbedPage>

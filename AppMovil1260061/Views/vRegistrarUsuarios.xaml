@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil1260061.Views.vRegistrarUsuarios"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#001F41">
+
+    <StackLayout>
+        <Frame CornerRadius="5" BackgroundColor="#001F41">
+            <Grid ColumnDefinitions="100,*" RowDefinitions="70">
+                <Image Source="https://www.zarla.com/images/zarla-logro-comercial-1x1-2400x2400-20220202-www4ychwq9jwvrchmkf4.png"
+                       HeightRequest="70" Grid.Column="0" Grid.Row="0"></Image>
+                <Label Text="GESTION DE USUARIOS" Grid.Column="1"
+                       TextColor="White" FontSize="20"
+                       FontAttributes="Bold" VerticalOptions="Center"></Label>
+            </Grid>
+        </Frame>
+
+        <Frame Margin="25" CornerRadius="10">
+            <StackLayout>
+                <Label Text="Full Name" TextColor="#000000"
+                       FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/6682/6682701.png"></Image>
+                    <Entry Placeholder="Ingrese full Name" Grid.Column="1" 
+                           Text="{Binding TxtFullName}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                
+                <Label Text="Username" TextColor="#000000"
+                        FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/527/527489.png"></Image>
+                    <Entry Placeholder="Ingrese UserName" Grid.Column="1"
+                           Text="{Binding TxtUserName}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Phone" TextColor="#000000"
+                        FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://images.vexels.com/media/users/3/205069/isolated/preview/f207045d96c258fed664305f0ac2c5bd-icono-de-auricular-de-telefono-azul.png"></Image>
+                    <Entry Placeholder="Ingrese Phone" MaxLength="9" Keyboard="Numeric" Grid.Column="1"
+                           Text="{Binding TxtPhone}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Image" TextColor="#000000"
+                        FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/8344/8344917.png"></Image>
+                    <Entry Placeholder="Ingrese Url Image" Grid.Column="1"
+                           Text="{Binding TxtImage}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                <Label Text="Email" TextColor="#000000"
+                        FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_640.png"></Image>
+                    <Entry Placeholder="Ingrese Email" Keyboard="Email" Grid.Column="1"
+                           Text="{Binding TxtEmail}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+                
+                <Label Text="Password" TextColor="#000000"
+                        FontSize="15" FontAttributes="Bold"></Label>
+                <Grid ColumnDefinitions="40,*">
+                    <Image Source="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Password.svg/1024px-Password.svg.png"></Image>
+                    <Entry Placeholder="Ingrese Password" Keyboard="Numeric" MaxLength="8"
+                            IsPassword="True" Grid.Column="1"
+                           Text="{Binding TxtPassword}" PlaceholderColor="Black" TextColor="Black"></Entry>
+                </Grid>
+
+                
+            </StackLayout>
+        </Frame>
+        <Grid ColumnDefinitions="*,*" RowDefinitions="*" Margin="10">
+            <Button HeightRequest="50" Text="REGISTRAR" TextColor="White"
+                    Grid.Column="0" Grid.Row="0" BackgroundColor="#000000"
+                    CornerRadius="10" FontSize="20" Command="{Binding InsertarUsuarioCommand}"></Button>
+            <Button Text="SIGN IN" Grid.Column="1" Grid.Row="0" BackgroundColor="White"
+                    FontAttributes="Bold" CornerRadius="10" FontSize="20" Clicked="Button_Clicked" TextColor="Black"></Button>
+        </Grid>
+    </StackLayout>
+</ContentPage>

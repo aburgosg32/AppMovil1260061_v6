@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil1260061.Views.vInicio"
+             BackgroundColor="#001F41" NavigationPage.HasNavigationBar="False">
+    <StackLayout Orientation="Vertical">
+        <Label Text="APP MOVIL 1260061" FontSize="30" FontAttributes="Bold"
+               VerticalTextAlignment="Center" TextColor="White" Margin="0,20,0,0" HorizontalOptions="Center"></Label>
+        <Image Source="https://www.zarla.com/images/zarla-logro-comercial-1x1-2400x2400-20220202-www4ychwq9jwvrchmkf4.png" 
+               WidthRequest="500" HeightRequest="500"
+               Margin="0,20,0,0"
+               
+               ></Image>
+        <Button Text="Acceder" CornerRadius="10"
+                Margin="30,100,30,0" FontSize="23"
+                FontAttributes="Bold" BackgroundColor="White"
+                TextColor="#080839" Clicked="Button_Clicked" FontFamily="Times New Roman"></Button>
+    </StackLayout>
+</ContentPage>
